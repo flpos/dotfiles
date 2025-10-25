@@ -1,0 +1,12 @@
+return {
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		init = function()
+			vim.cmd.colorscheme("catppuccin-mocha")
+		end,
+		opts = {
+			transparent_background = true,
+		},
+	},
+}
