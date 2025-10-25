@@ -1,0 +1,14 @@
+;; Kanata configuration for caps to esc+ctrl
+
+(defsrc
+  caps
+)
+
+;; (defalias
+;;  escctrl (tap-hold 500 50 esc lctrl))
+
+;; (deflayer base
+;;   @escctrl
+;; )
+
+(deflayer base lctrl)
