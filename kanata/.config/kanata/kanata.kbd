@@ -11,9 +11,9 @@
 )
 
 (defalias
- escralt (tap-hold 200 200 esc ralt))
-
-(defalias nav (layer-while-held navigation))
+  nav (layer-while-held navigation)
+  escralt (tap-hold 200 200 esc ralt)
+)
 
 (defvar
   mouse-interval 15
@@ -38,7 +38,7 @@
 
   ;s (tap-hold 200 200 ; lmet)
   ls (tap-hold 200 200 l lsft)
-  ka (tap-hold 200 200 k ralt)
+  ka (tap-hold 200 200 k lalt)
   jc (tap-hold 200 200 j lctl)
 )
 
