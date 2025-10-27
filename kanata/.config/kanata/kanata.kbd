@@ -12,7 +12,6 @@
 
 (defalias
   nav (layer-while-held navigation)
-  escralt (tap-hold 200 200 esc ralt)
 )
 
 (defvar
@@ -42,25 +41,30 @@
   jc (tap-hold 200 200 j lctl)
 )
 
-(defalias
-  spcnav (tap-hold 200 200 spc @nav)
-)
-
 ;; Definir um layer padrão
 (deflayer default
-  esc       @nav f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        prnt slck brk
+  esc       f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        prnt slck brk
   grv       1    2    3    4    5    6    7    8    9    0    -    =    bspc  ins  home pgup
   tab       q    w    e    r    t    y    u    i    o    p    [    ]    \     del  end  pgdn
-  @escralt  @as  @ss  @da  @fc  g    h    @jc  @ka  @ls  @;s  '    ret
+  lctl      a    s    d    f    g    h    j    k    l    @;s  '    ret
   lsft      z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl      lmet lalt           @spcnav        ralt @nav rctl
+  @nav      lmet lalt           spc            ralt @nav rctl
 )
+
+;; (deflayer homerowmods
+;;   esc       @nav f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        prnt slck brk
+;;   grv       1    2    3    4    5    6    7    8    9    0    -    =    bspc  ins  home pgup
+;;   tab       q    w    e    r    t    y    u    i    o    p    [    ]    \     del  end  pgdn
+;;   lctl      @as  @ss  @da  @fc  g    h    @jc  @ka  @ls  @;s  '    ret
+;;   lsft      z    x    c    v    b    n    m    ,    .    /    rsft
+;;   lctl      lmet lalt           spc            ralt @nav rctl
+;; )
 
 (deflayer navigation
   esc      f1     f2   f3       f4   f5   f6   f7   f8   f9    f10  f11  f12        prnt slck brk
   grv      1      2    3        4    5    6    7    8    9     0    -    =    bspc  mlft @mu mrgt
   tab      home   up   end      pgup t    y    u    i    o     p    [    ]    \     @ml  @md @mr
-  @escralt left   down right    pgdn g    left down up   right ;    '    lrld
+  lctl     left   down right    pgdn g    left down up   right ;    '    lrld
   lsft     C-left x    C-right  v    b    n    m    ,    .     /    rsft
   lctl     lmet lalt           spc                    ralt menu rctl
 )
