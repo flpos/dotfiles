@@ -5,4 +5,5 @@ vim.g.snacks_animate = false
 vim.g.lazyvim_cmp = "blink.cmp"
 
 local opt = vim.opt
+opt.spelllang = { "pt_br", "en_us" }
 opt.cursorline = false
