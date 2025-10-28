@@ -2,6 +2,7 @@ return {
   {
     "snacks.nvim",
     opts = {
+      image = { enabled = true },
       indent = { enabled = false },
       input = { enabled = true },
       notifier = { enabled = true },
