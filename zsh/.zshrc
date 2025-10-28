@@ -1,16 +1,25 @@
 # Add deno completions to search path
-if [[ ":$FPATH:" != *":/home/felipeoliveira/.zsh/completions:"* ]]; then export FPATH="/home/felipeoliveira/.zsh/completions:$FPATH"; fi
+if [[ ":$FPATH:" != *":$HOME/.zsh/completions:"* ]]; then
+  export FPATH="$HOME/.zsh/completions:$FPATH";
+fi
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
-# load a random theme each time Oh My Zsh is loaded, in which case,
+# load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -72,10 +81,18 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf tmux fzf-tab)
+plugins=(
+  git
+  tmux
+  fzf
+  fzf-tab
+  docker
+  asdf
+  gcloud
+  kubectl
+)
 
 source $ZSH/oh-my-zsh.sh
-# source <(fzf --zsh)
 
 # User configuration
 
@@ -90,6 +107,7 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='nvim'
 # fi
+export EDITOR='nvim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
@@ -106,19 +124,74 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# extraido do bashrc
-# User specific environment
-if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
-  PATH="$HOME/.local/bin:$HOME/bin:$PATH"
-fi
-export PATH
-export EDITOR=/usr/bin/nvim
-. "/home/felipeoliveira/.deno/env"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-# append completions to fpath
-fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
-# initialise completions with ZSH's compinit
-autoload -Uz compinit && compinit
+# place this after nvm initialization!
+autoload -U add-zsh-hook
+load-nvmrc() {
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use
+    fi
+  elif [ "$node_version" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
+
+export PATH="/opt/nvim-linux64/bin:$PATH"
+
 alias ls=lsd
+alias lsg="ls | grep "
+# alias tsc='ts $(basename $(pwd))'
+alias set-sink='pactl set-default-sink'
+alias set-port='pactl set-sink-port'
 alias lg=lazygit
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# The next line updates PATH for the Google Cloud SDK.
+# if [ -f '/home/felipe/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/felipe/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+# if [ -f '/home/felipe/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/felipe/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+if [ -f "$HOME/.cargo/env" ]; then
+    . "$HOME/.cargo/env"
+fi
+
+if [ -d "$HOME/.cargo/bin" ]; then
+    export PATH=$HOME/.cargo/bin/:$PATH
+fi
+
+source <(fzf --zsh)
+source <(cx completion zsh)
+# eval "$(direnv hook zsh)"
+# source <(kubectl completion zsh)
+alias tmss='tms switch'
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export NODE_OPTIONS=--use-openssl-ca
+
+. "$HOME/.deno/env"
+. "$HOME/.asdf/plugins/java/set-java-home.zsh"
+
+# Notes.
+alias notes="nvim +\"cd ~/notes\""
+
+# Nvim clean
+alias nclean="NVIM_APPNAME=nvim-clean nvim"
+
+alias snxc="snxctl connect"
+alias snxd="snxctl disconnect"
