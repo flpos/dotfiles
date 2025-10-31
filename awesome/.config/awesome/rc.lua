@@ -404,26 +404,27 @@ globalkeys = mytable.join(
 	end, { description = "-10%", group = "hotkeys" }),
 
 	-- ALSA volume control
-	awful.key({ altkey }, "Up", function()
-		os.execute(string.format("amixer -q set %s 1%%+", beautiful.volume.channel))
+	awful.key({}, "XF86AudioPlay", function()
+		awful.util.spawn("playerctl play-pause")
+	end),
+	awful.key({}, "XF86AudioNext", function()
+		awful.util.spawn("playerctl next")
+	end),
+	awful.key({}, "XF86AudioPrev", function()
+		awful.util.spawn("playerctl previous")
+	end),
+	awful.key({}, "XF86AudioRaiseVolume", function()
+		awful.util.spawn("amixer -c 0 set Master 1dB+")
 		beautiful.volume.update()
-	end, { description = "volume up", group = "hotkeys" }),
-	awful.key({ altkey }, "Down", function()
-		os.execute(string.format("amixer -q set %s 1%%-", beautiful.volume.channel))
+	end),
+	awful.key({}, "XF86AudioLowerVolume", function()
+		awful.util.spawn("amixer -c 0 set Master 1dB-")
 		beautiful.volume.update()
-	end, { description = "volume down", group = "hotkeys" }),
-	awful.key({ altkey }, "m", function()
-		os.execute(string.format("amixer -q set %s toggle", beautiful.volume.togglechannel or beautiful.volume.channel))
+	end),
+	awful.key({}, "XF86AudioMute", function()
+		awful.util.spawn("amixer -c 0 set Master toggle")
 		beautiful.volume.update()
-	end, { description = "toggle mute", group = "hotkeys" }),
-	-- awful.key({ altkey, "Control" }, "m", function()
-	-- 	os.execute(string.format("amixer -q set %s 100%%", beautiful.volume.channel))
-	-- 	beautiful.volume.update()
-	-- end, { description = "volume 100%", group = "hotkeys" }),
-	-- awful.key({ altkey, "Control" }, "0", function()
-	-- 	os.execute(string.format("amixer -q set %s 0%%", beautiful.volume.channel))
-	-- 	beautiful.volume.update()
-	-- end, { description = "volume 0%", group = "hotkeys" }),
+	end),
 
 	-- Copy primary to clipboard (terminals to gtk)
 	awful.key({ modkey }, "c", function()
