@@ -209,3 +209,4 @@ alias nclean="NVIM_APPNAME=nvim-clean nvim"
 
 alias snxc="snxctl connect"
 alias snxd="snxctl disconnect"
+export MANPAGER='nvim +Man!'
