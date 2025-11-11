@@ -1,7 +1,3 @@
-# Add deno completions to search path
-if [[ ":$FPATH:" != *":$HOME/.zsh/completions:"* ]]; then
-  export FPATH="$HOME/.zsh/completions:$FPATH";
-fi
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -83,16 +79,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-  tmux
-  fzf
-  fzf-tab
-  docker
-  asdf
-  gcloud
-  kubectl
-)
+plugins=(git tmux asdf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -158,19 +145,11 @@ export PATH="/opt/nvim-linux64/bin:$PATH"
 
 alias ls=lsd
 alias lsg="ls | grep "
-# alias tsc='ts $(basename $(pwd))'
+alias tscd='ts $(basename $(pwd))'
+alias home='tmux new -s Home -A'
 alias set-sink='pactl set-default-sink'
 alias set-port='pactl set-sink-port'
 alias lg=lazygit
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# The next line updates PATH for the Google Cloud SDK.
-# if [ -f '/home/felipe/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/felipe/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-# if [ -f '/home/felipe/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/felipe/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
 if [ -f "$HOME/.cargo/env" ]; then
     . "$HOME/.cargo/env"
@@ -180,12 +159,11 @@ if [ -d "$HOME/.cargo/bin" ]; then
     export PATH=$HOME/.cargo/bin/:$PATH
 fi
 
-source <(fzf --zsh)
+source $HOME/.oh-my-zsh/custom/plugins/fzf-tab/fzf-tab.plugin.zsh
+
 if [[ -f $(which cx 2>/dev/null) ]]; then
   source <(cx completion zsh)
 fi
-# eval "$(direnv hook zsh)"
-# source <(kubectl completion zsh)
 alias tmss='tms switch'
 export NODE_OPTIONS=--use-openssl-ca
 
