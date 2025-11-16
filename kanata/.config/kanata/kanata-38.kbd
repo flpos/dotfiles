@@ -1,0 +1,91 @@
+;; Configuração para teclado com 36 teclas
+
+(defcfg
+  process-unmapped-keys yes
+  concurrent-tap-hold yes
+)
+
+(defsrc
+      q    w    e    r    t    y    u    i    o    p
+caps  a    s    d    f    g    h    j    k    l    ;    '
+      z    x    c    v    b    n    m    ,    .    /
+      lctl lmet lalt           spc       ralt menu
+)
+
+(defvar
+  tap-time 200
+  hold-time 180
+
+  left-hand-keys (
+    q    w    e    r    t
+    a    s    d    f    g
+    z    x    c    v    b
+  )
+
+  right-hand-keys (
+    y    u    i    o    p
+    h    j    k    l    ;
+    n    m    ,    .    /
+  )
+)
+
+(deflayer base
+     q          w    e         r    t    y    u    i    o    p
+esc  @a         @s   @d        @f   g    h    @j   @k   @l   @;   ret
+     z          x    c         v    b    n    m    ,    .    /
+     @ch-layers lmet @symbols           spc       ralt menu
+)
+(deflayer nomods
+     q    w    e    r    t    y    u    i    o    p
+esc  a    s    d    f    g    h    j    k    l    ;   ret
+     z    x    c    v    b    n    m    ,    .    /
+     lctl lmet lalt           spc       ralt menu
+)
+
+(deffakekeys
+  to-base (layer-switch base)
+)
+
+(defalias
+  tap (multi
+    (layer-switch nomods)
+    (on-idle-fakekey to-base tap 20)
+  )
+
+  a (tap-hold-release-keys $tap-time $hold-time (multi a @tap) lmet $left-hand-keys)
+  s (tap-hold-release-keys $tap-time $hold-time (multi s @tap) lsft $left-hand-keys)
+  d (tap-hold-release-keys $tap-time $hold-time (multi d @tap) lalt $left-hand-keys)
+  f (tap-hold-release-keys $tap-time $hold-time (multi f @tap) lctl $left-hand-keys)
+  ; (tap-hold-release-keys $tap-time $hold-time (multi ; @tap) rmet $right-hand-keys)
+  l (tap-hold-release-keys $tap-time $hold-time (multi l @tap) rsft $right-hand-keys)
+  k (tap-hold-release-keys $tap-time $hold-time (multi k @tap) ralt $right-hand-keys)
+  j (tap-hold-release-keys $tap-time $hold-time (multi j @tap) rctl $right-hand-keys)
+)
+
+(defalias
+  ch-layers (layer-toggle layers)
+  base (layer-switch base)
+  ltsym (layer-toggle symbols)
+  symbols (tap-dance 500 (@ltsym (multi lsft @ltsym) (multi lmet @ltsym)))
+)
+
+(deflayer layers
+   @base    @symbols   _    _    _    _    _    _    _    _
+_  _        _          _    _    _    _    _    _    _    _ _
+   _        _          _    _    _    _    _    _    _    _
+   _        lrld       _              _         _    _
+)
+
+(deflayer symbols
+     '       RA-'   _    _    _    5    6    7    8    9
+tab  RA-`    `      _    _    _    0    1    2    3    4  bspc
+     RA-S-6  S-6    _    _    _    -    =    [    ]    \
+     _       _      _              _         _    _
+)
+
+(deflayer empty
+    _    _   _    _    _    _    _    _    _    _
+_   _    _   _    _    _    _    _    _    _    _   _
+    _    _   _    _    _    _    _    _    _    _
+    _    _   _              _         _    _
+)
