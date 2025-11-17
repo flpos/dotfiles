@@ -15,12 +15,12 @@
 )
 
 (deflayer base
-  XX  XX  XX  XX  XX    XX  XX    XX     XX  XX  XX  XX  XX        XX  XX  XX
-  XX  q   w   e   r     t   y     u      i   o   p   XX  XX  XX    XX  XX  XX
-  XX  @a  @s  @d  @f    g   h     @j     @k  @l  @;  XX  XX  XX    XX  XX  XX
-  XX  z   @x  @c  v     b   n     m      @,  @.  /   XX  XX
-  XX  XX  XX  0   bspc  XX  @spc  @lt8   XX  XX  XX  XX                XX
-  XX  XX  XX            XX               XX  XX  XX                XX  XX  XX
+  XX  XX  XX  XX    XX    XX  XX    XX     XX  XX  XX  XX  XX        XX  XX  XX
+  XX  q   w   e     r     t   y     u      i   o   p   XX  XX  XX    XX  XX  XX
+  XX  @a  @s  @d    @f    g   h     @j     @k  @l  @;  XX  XX  XX    XX  XX  XX
+  XX  z   @x  @c    v     b   n     m      @,  @.  /   XX  XX
+  XX  XX  XX  lmet  bspc  XX  @spc  @lt8   XX  XX  XX  XX                XX
+  XX  XX  XX              XX               XX  XX  XX                XX  XX  XX
 )
 
 (deflayer mouse
@@ -87,12 +87,12 @@
 )
 
 (deflayer dwm
-  _   _     _     _     _     _     _     _     _     _     _       _   _         _   _   _
-  _   M-S-1 M-S-2 M-S-3 M-S-4 _     _     _     _     _     M-p     _   _   _     _   _   _
-  _   M-1   M-2   M-3   M-4   M-0   M-h   M-j   M-k   M-l   M-S-ret _   _   _     _   _   _
-  _   M-C-1 M-C-2 M-C-3 M-C-4 _     _     _     _     _     M-=     _   _
-  _   _     _     M-S-- M--   _     _     XX    _     _     _       _                 _
-  _   _     _                 _                 _     _     _                     _   _   _
+  _   _     _     _     _     _     _     _       _     _     _       _   _         _   _   _
+  _   M-S-1 M-S-2 M-S-3 M-S-4 _     _     _       _     _     M-p     _   _   _     _   _   _
+  _   M-1   M-2   M-3   M-4   M-0   M-h   M-j     M-k   M-l   M-S-ret _   _   _     _   _   _
+  _   M-C-1 M-C-2 M-C-3 M-C-4 _     _     S-C-tab C-tab _     M-=     _   _
+  _   _     _     M-S-- M--   _     _     XX      _     _     _       _                 _
+  _   _     _                 _                   _     _     _                     _   _   _
 )
 
 (deflayer empty
