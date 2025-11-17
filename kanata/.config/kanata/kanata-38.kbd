@@ -1,8 +1,10 @@
 ;; Configuração para teclado com 36 teclas
+;; feita por mim mesmo, grazaDeus
 
 (defcfg
   process-unmapped-keys yes
   concurrent-tap-hold yes
+  log-layer-changes no
 )
 
 (defsrc
