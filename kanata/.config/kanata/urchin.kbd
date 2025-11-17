@@ -18,7 +18,7 @@
   XX  XX  XX  XX    XX    XX  XX    XX     XX  XX  XX  XX  XX        XX  XX  XX
   XX  q   w   e     r     t   y     u      i   o   p   XX  XX  XX    XX  XX  XX
   XX  @a  @s  @d    @f    g   h     @j     @k  @l  @;  XX  XX  XX    XX  XX  XX
-  XX  z   @x  @c    v     b   n     m      @,  @.  /   XX  XX
+  XX  z   x   @c    @v    b   n     @m     @,  .   /   XX  XX
   XX  XX  XX  lmet  bspc  XX  @spc  @lt8   XX  XX  XX  XX                XX
   XX  XX  XX              XX               XX  XX  XX                XX  XX  XX
 )
@@ -132,7 +132,7 @@
   s (tap-hold $tt $ht s @lt5)
   d (tap-hold $tt $ht d @lt1)
   f (tap-hold $tt $ht f @lt3)
-  x (tap-hold $tt $ht x lctl)
+  v (tap-hold $tt $ht v lctl)
   c (tap-hold $tt $ht c lalt)
 
   j (tap-hold $tt $ht j @lt4)
@@ -140,7 +140,7 @@
   l (tap-hold $tt $ht l @lt6)
   ; (tap-hold $tt $ht ; lsft)
   , (tap-hold $tt $ht , lalt)
-  . (tap-hold $tt $ht . lctl)
+  m (tap-hold $tt $ht m lctl)
 
   spc (tap-hold $tt $ht spc @lt7)
 
