@@ -1,0 +1,11 @@
+[Unit]
+Description=Kanata
+
+[Service]
+Type=simple
+ExecStart=/home/felipeoliveira/.local/bin/kanata -nq
+Restart=on-failure
+RestartSec=1s
+
+[Install]
+WantedBy=default.target
