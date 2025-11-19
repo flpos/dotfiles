@@ -45,7 +45,7 @@
   _   _   _   _   _   _   _   _   _   _     _   _   _         _   _   _
   _   _   _   _   _   _   _   S-- S-\ apo   _   _   _   _     _   _   _
   _   S-6 S-8 S-7 XX  _   S-3 S-` /   S-apo S-4 _   _   _     _   _   _
-  _   _   _   _   _   _   _   -   \   `     _   _   _
+  _   _   _   @cd _   _   _   -   \   `     _   _   _
   _   _   _   _   _   _   _   _   _   _     _   _                 _
   _   _   _           _           _   _     _                 _   _   _
 )
@@ -164,4 +164,6 @@
   mwd (mwheel-down  $mouse-interval $mouse-wheel-distance)
   mwl (mwheel-left  $mouse-interval $mouse-wheel-distance)
   mwr (mwheel-right $mouse-interval $mouse-wheel-distance)
+
+  cd (unicode "ç")
 )
