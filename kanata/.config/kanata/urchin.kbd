@@ -78,12 +78,12 @@
 )
 
 (deflayer always
-  _   _   _   _   _   _   _   _    _    _   _   _   _         _   _   _
-  _   _   _   S-; esc _   _   _    _    _   del _   _   _     _   _   _
-  _   _   S-5 /   ret _   _   lmet lrld _   _   _   _   _     _   _   _
-  _   _   _   _   S-1 _   _   _    _    _   _   _   _
-  _   _   _   _   tab _   XX  _    _    _   _   _                 _
-  _   _   _           _            _    _   _                 _   _   _
+  _   _   _   _   _   _   _   _    _    _     _   _   _         _   _   _
+  _   _   _   S-; esc _   _   _    _    _     del _   _   _     _   _   _
+  _   _   S-5 /   ret _   _   lmet lrld @lsn  _   _   _   _     _   _   _
+  _   _   _   _   S-1 _   _   _    _    _     _   _   _
+  _   _   _   _   tab _   XX  _    _    _     _   _                 _
+  _   _   _           _            _    _     _                 _   _   _
 )
 
 (deflayer dwm
@@ -93,6 +93,15 @@
   _   M-C-1 M-C-2 M-C-3 M-C-4 _     _     S-C-tab C-tab _     M-=     _   _
   _   _     _     M-S-- M--   _     _     XX      _     _     _       _                 _
   _   _     _                 _                   _     _     _                     _   _   _
+)
+
+(deflayer normie
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  @lsb      prnt slck brk
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc ins  home pgup
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \    del  end  pgdn
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft                up
+  lctl lmet lalt           spc            ralt menu rctl                left down right
 )
 
 (deflayer empty
@@ -127,6 +136,8 @@
   lt6 (layer-toggle numbers)
   lt7 (layer-toggle always)
   lt8 (layer-toggle dwm)
+  lsb (layer-switch base)
+  lsn (layer-switch normie)
 
   a (tap-hold $tt $ht a lsft)
   s (tap-hold $tt $ht s @lt5)
