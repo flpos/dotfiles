@@ -30,15 +30,15 @@ grv   1     2     3     4     5     6     7     8     9     0     -     =     bs
 tab   q     w     e     r     t     y     u     i     o     p     [     ]     \     del   end   pgdn
 lctl  a     s     d     f     g     h     j     k     l     ;     '     ret   #||#  #||#  #||#  #||#
 lsft  z     x     c     v     b     n     m     ,     .     /     rsft  #||#  #||#  #||#  up    #||#
-lctl  lmet  lalt  #||#  #||#  @spc  #||#  #||#  ralt  menu  rctl  #||#  #||#  #||#  left  down  right
+lctl  lmet  lalt  #||#  #||#  spc   #||#  #||#  ralt  menu  rctl  #||#  #||#  #||#  left  down  right
 )
 
 (deflayer always
 #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#
 @lsn  _     _     _     _     _     _     _     _     _     _     _     _     #||#  _     _     _
 M-0   M-1   M-2   M-3   M-4   _     _     _     _     _     _     _     _     _     _     _     _
-_     _     _     S-;   esc   _     _     _     _     _     del   _     _     _     _     _     _
-lrld  tab   S-5   /     ret   _     _     bspc  _     _     _     _     _     #||#  #||#  #||#  #||#
+_     _     _     S-;   esc   _     _     bspc  _     _     del   _     _     _     _     _     _
+lrld  _     S-5   /     ret   _     _     lmet  _     _     _     _     _     #||#  #||#  #||#  #||#
 _     _     _     _     S-1   _     _     _     _     _     _     _     #||#  #||#  #||#  _     #||#
 _     _     _     #||#  #||#  XX    #||#  #||#  _     _     _     #||#  #||#  #||#  _     _     _
 )
