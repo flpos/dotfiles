@@ -1,0 +1,161 @@
+;; 915TKL
+(defsrc
+#||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#
+esc   f1    f2    f3    f4    f5    f6    f7    f8    f9    f10   f11   f12   #||#  prnt  slck  brk
+grv   1     2     3     4     5     6     7     8     9     0     -     =     bspc  ins   home  pgup
+tab   q     w     e     r     t     y     u     i     o     p     [     ]     \     del   end   pgdn
+caps  a     s     d     f     g     h     j     k     l     ;     '     ret   #||#  #||#  #||#  #||#
+lsft  z     x     c     v     b     n     m     ,     .     /     rsft  #||#  #||#  #||#  up    #||#
+lctl  lmet  lalt  #||#  #||#  spc   #||#  #||#  ralt  menu  rctl  #||#  #||#  #||#  left  down  right
+)
+
+(defcfg
+  process-unmapped-keys yes
+)
+
+(deflayer base
+#||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#
+esc   f1    f2    f3    f4    f5    f6    f7    f8    f9    f10   f11   f12   #||#  prnt  slck  brk
+grv   1     2     3     4     5     6     7     8     9     0     -     =     bspc  ins   home  pgup
+tab   q     w     e     r     t     y     u     i     o     p     [     ]     \     del   end   pgdn
+lctl  @a    s     @d    @f    g     h     @j    @k    @l    @;    '     ret   #||#  #||#  #||#  #||#
+lsft  z     x     @c    @v    b     n     @m    @,    .     /     rsft  #||#  #||#  #||#  up    #||#
+lctl  lmet  lalt  #||#  #||#  @spc  #||#  #||#  ralt  menu  rctl  #||#  #||#  #||#  left  down  right
+)
+
+(deflayer normie
+#||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#
+esc   f1    f2    f3    f4    f5    f6    f7    f8    f9    f10   f11   @lsb  #||#  prnt  slck  brk
+grv   1     2     3     4     5     6     7     8     9     0     -     =     bspc  ins   home  pgup
+tab   q     w     e     r     t     y     u     i     o     p     [     ]     \     del   end   pgdn
+lctl  a     s     d     f     g     h     j     k     l     ;     '     ret   #||#  #||#  #||#  #||#
+lsft  z     x     c     v     b     n     m     ,     .     /     rsft  #||#  #||#  #||#  up    #||#
+lctl  lmet  lalt  #||#  #||#  spc   #||#  #||#  ralt  menu  rctl  #||#  #||#  #||#  left  down  right
+)
+
+(deflayer always
+#||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#
+@lsn  _     _     _     _     _     _     _     _     _     _     _     _     #||#  _     _     _
+M-0   M-1   M-2   M-3   M-4   _     _     _     _     _     _     _     _     _     _     _     _
+_     _     _     S-;   esc   _     _     bspc  _     _     del   _     _     _     _     _     _
+lrld  _     S-5   /     ret   _     _     lmet  _     _     _     _     _     #||#  #||#  #||#  #||#
+_     _     _     _     S-1   _     _     _     _     _     _     _     #||#  #||#  #||#  _     #||#
+_     _     _     #||#  #||#  XX    #||#  #||#  _     _     _     #||#  #||#  #||#  _     _     _
+)
+
+(deflayer mouse
+#||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#
+_     _     _     _     _     _     _     _     _     _     _     _     _     #||#  _     _     _
+_     _     _     _     _     _     _     _     _     _     _     _     _     _     _     _     _
+_     _     _     _     _     _     _     mlft  @mwu  mrgt  _     _     _     _     _     _     _
+_     _     mrgt  XX    mlft  _     _     @mml  @mmd  @mmu  @mmr  _     _     #||#  #||#  #||#  #||#
+_     _     _     _     _     _     _     @mwl  @mwd  @mwr  _     _     #||#  #||#  #||#  _     #||#
+_     _     _     #||#  #||#  _     #||#  #||#  _     _     _     #||#  #||#  #||#  _     _     _
+)
+
+(deflayer navigation
+#||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#
+_     _     _     _     _     _     _     _     _     _     _     _     _     #||#  _     _     _
+_     _     _     _     _     _     _     _     _     _     _     _     _     _     _     _     _
+_     _     _     ⇞     _     _     _     _     _     _     _     _     _     _     _     _     _
+_     ◀     ▲     ▼     ▶     _     _     lmet  XX    _     _     _     _     #||#  #||#  #||#  #||#
+_     _     ⇤     ⇟     ⇥     _     _     _     _     _     _     _     #||#  #||#  #||#  _     #||#
+_     _     _     #||#  #||#  _     #||#  #||#  _     _     _     #||#  #||#  #||#  _     _     _
+)
+
+(deflayer right_symbols
+#||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#   #||#  #||#  #||#  #||#  #||#  #||#  #||#
+_     _     _     _     _     _     _     _     _     _      _     _     _     #||#  _     _     _
+_     _     _     _     _     _     _     _     _     _      _     _     _     _     _     _     _
+_     _     _     _     _     _     _     S--   S-\   apo    _     _     _     _     _     _     _
+_     S-6   S-8   S-7   XX    _     S-3   S-`   /     S-apo  S-4   _     _     #||#  #||#  #||#  #||#
+_     _     _     @cd   _     _     _     -     \     `      _     _     #||#  #||#  #||#  _     #||#
+_     _     _     #||#  #||#  _     #||#  #||#  _     _      _     #||#  #||#  #||#  _     _     _
+)
+
+(deflayer left_symbols
+#||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||# 
+_     _     _     _     _     _     _     _     _     _     _     _     _     #||#  _     _     _    
+_     _     _     _     _     _     _     _     _     _     _     _     _     _     _     _     _    
+_     _     S-;   S-,   S-.   ;     _     _     _     _     _     _     _     _     _     _     _    
+_     S-[   S-]   S-9   S-0   S-2   _     XX    =     +     S-5   _     _     #||#  #||#  #||#  #||# 
+_     _     S-1   [     ]     _     _     _     _     _     _     _     #||#  #||#  #||#  _     #||# 
+_     _     _     #||#  #||#  _     #||#  #||#  _     _     _     #||#  #||#  #||#  _     _     _    
+)
+
+(deflayer numbers
+#||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  
+_     _     _     _     _     _     _     _     _     _     _     _     _     #||#  _     _     _     
+_     _     _     _     _     _     _     _     _     _     _     _     _     _     _     _     _     
+_     /     7     8     9     +     _     _     _     _     _     _     _     _     _     _     _     
+_     0     1     2     3     -     _     _     _     XX    _     _     _     #||#  #||#  #||#  #||#  
+_     S-8   4     5     6     =     _     _     _     _     _     _     #||#  #||#  #||#  _     #||#  
+_     _     _     #||#  #||#  _     #||#  #||#  _     _     _     #||#  #||#  #||#  _     _     _     
+)
+
+
+(deflayer empty
+#||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#
+_     _     _     _     _     _     _     _     _     _     _     _     _     #||#  _     _     _
+_     _     _     _     _     _     _     _     _     _     _     _     _     _     _     _     _
+_     _     _     _     _     _     _     _     _     _     _     _     _     _     _     _     _
+_     _     _     _     _     _     _     _     _     _     _     _     _     #||#  #||#  #||#  #||#
+_     _     _     _     _     _     _     _     _     _     _     _     #||#  #||#  #||#  _     #||#
+_     _     _     #||#  #||#  _     #||#  #||#  _     _     _     #||#  #||#  #||#  _     _     _
+)
+
+(defvar
+  tap-time 200
+  hold-time 180
+  tt $tap-time
+  ht $hold-time
+
+  mouse-interval 15
+  mouse-accel-interval 1200
+  mouse-min-distance 1
+  mouse-max-distance 40
+  mouse-wheel-distance 20
+)
+
+;; manter qualquer informação nos layers com no máximo 3 caracteres
+(defalias
+  ;; layer toggles
+  lt1 (layer-toggle mouse)
+  lt2 (layer-toggle navigation)
+  lt3 (layer-toggle right_symbols)
+  lt4 (layer-toggle left_symbols)
+  ;; lt5 (layer-toggle function_keys)
+  lt6 (layer-toggle numbers)
+  lt7 (layer-toggle always)
+  ;; lt8 (layer-toggle dwm)
+  lsb (layer-switch base)
+  lsn (layer-switch normie)
+
+  ;; s (tap-hold $tt $ht s @lt5)
+  d (tap-hold $tt $ht d @lt1)
+  f (tap-hold $tt $ht f @lt3)
+  a (tap-hold $tt $ht a lsft)
+  c (tap-hold $tt $ht c lalt)
+  v (tap-hold $tt $ht v lctl)
+
+  j (tap-hold $tt $ht j @lt4)
+  k (tap-hold $tt $ht k @lt2)
+  l (tap-hold $tt $ht l @lt6)
+  ; (tap-hold $tt $ht ; lsft)
+  , (tap-hold $tt $ht , lalt)
+  m (tap-hold $tt $ht m lctl)
+
+  spc (tap-hold $tt $ht spc @lt7)
+
+  mmu (movemouse-accel-up    $mouse-interval $mouse-accel-interval $mouse-min-distance $mouse-max-distance)
+  mmd (movemouse-accel-down  $mouse-interval $mouse-accel-interval $mouse-min-distance $mouse-max-distance)
+  mml (movemouse-accel-left  $mouse-interval $mouse-accel-interval $mouse-min-distance $mouse-max-distance)
+  mmr (movemouse-accel-right $mouse-interval $mouse-accel-interval $mouse-min-distance $mouse-max-distance)
+
+  mwu (mwheel-up    $mouse-interval $mouse-wheel-distance)
+  mwd (mwheel-down  $mouse-interval $mouse-wheel-distance)
+  mwl (mwheel-left  $mouse-interval $mouse-wheel-distance)
+  mwr (mwheel-right $mouse-interval $mouse-wheel-distance)
+
+  cd (unicode "ç")
+)
