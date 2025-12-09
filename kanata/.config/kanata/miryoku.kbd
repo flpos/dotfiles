@@ -19,9 +19,49 @@ lctl  lmet  lalt  #||#  #||#  spc   #||#  #||#  ralt  menu  rctl  #||#  #||#  #|
 esc   f1    f2    f3    f4    f5    f6    f7    f8    f9    f10   f11   f12   #||#  prnt  slck   brk
 grv   1     2     3     4     5     6     7     8     9     0     -     =     bspc  ins   @home  pgup
 tab   q     w     e     r     t     y     u     i     o     p     [     ]     \     del   end    pgdn
-esc   @a    @s    @d    @f    g     h     @j    @k    @l    @;    '     ret   #||#  #||#  #||#   #||#
+esc   @a    @s    @d    @f    g     h     @j    @k    @l    @;    @l_nu ret   #||#  #||#  #||#   #||#
 lsft  z     x     c     v     b     n     m     ,     .     /     rsft  #||#  #||#  #||#  up     #||#
-lctl  lmet  lalt  #||#  #||#  spc   #||#  #||#  ralt  menu  rctl  #||#  #||#  #||#  left  down   right
+lctl  @l_na @l_mo #||#  #||#  spc   #||#  #||#  @l_sy @l_nu rctl  #||#  #||#  #||#  left  down   right
+)
+
+(deflayer nav
+#||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#   #||#
+esc   f1    f2    f3    f4    f5    f6    f7    f8    f9    f10   f11   f12   #||#  prnt  slck   brk
+grv   1     2     3     4     5     6     7     8     9     0     -     =     bspc  ins   @home  pgup
+tab   q     w     e     r     t     C-r   C-v   C-c   C-x   C-z   [     ]     \     del   end    pgdn
+esc   lmet  lalt  lctl  lsft  g     caps  left  down  up    right '     ret   #||#  #||#  #||#   #||#
+lsft  z     x     c     v     b     ins   home  pgdn  pgup  end   rsft  #||#  #||#  #||#  up     #||#
+lctl  lmet  lalt  #||#  #||#  XX    #||#  #||#  ralt  menu  rctl  #||#  #||#  #||#  left  down   right
+)
+
+(deflayer mouse
+#||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#   #||#
+esc   f1    f2    f3    f4    f5    f6    f7    f8    f9    f10   f11   f12   #||#  prnt  slck   brk
+grv   1     2     3     4     5     6     7     8     9     0     -     =     bspc  ins   @home  pgup
+tab   q     w     e     r     t     C-r   C-v   C-c   C-x   C-z   [     ]     \     del   end    pgdn
+esc   lmet  lalt  lctl  lsft  g     h     @mml  @mmd  @mmu  @mmr  '     ret   #||#  #||#  #||#   #||#
+lsft  z     x     c     v     b     n     @mwl  @mwd  @mwu  @mwr  rsft  #||#  #||#  #||#  up     #||#
+lctl  lmet  lalt  #||#  #||#  mlft  #||#  #||#  ralt  menu  rctl  #||#  #||#  #||#  left  down   right
+)
+
+(deflayer num
+#||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#
+esc   f1    f2    f3    f4    f5    f6    f7    f8    f9    f10   f11   f12   #||#  prnt  slck  brk
+grv   1     2     3     4     5     6     7     8     9     0     -     =     bspc  ins   home  pgup
+0     [     7     8     9     ]     y     u     i     o     p     [     ]     \     del   end   pgdn
+-     '     4     5     6     =     h     rsft  rctl  ralt  rmet  -     ret   #||#  #||#  #||#  #||#
+lsft  `     1     2     3     \     n     m     ,     .     /     rsft  #||#  #||#  #||#  up    #||#
+lctl  lmet  lalt  #||#  #||#  spc   #||#  #||#  ralt  menu  rctl  #||#  #||#  #||#  left  down  right
+)
+
+(deflayer symbol
+#||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#  #||#
+esc   f1    f2    f3    f4    f5    f6    f7    f8    f9    f10   f11   f12   #||#  prnt  slck  brk
+grv   1     2     3     4     5     6     7     8     9     0     -     =     bspc  ins   home  pgup
+S-0   S-[   S-7   S-8   S-9   S-]   y     u     i     o     p     [     ]     \     del   end   pgdn
+S--   S-'   S-4   S-5   S-6   S-=   h     rsft  rctl  ralt  rmet  -     ret   #||#  #||#  #||#  #||#
+lsft  S-`   S-1   S-2   S-3   S-\   n     m     ,     .     /     rsft  #||#  #||#  #||#  up    #||#
+lctl  lmet  lalt  #||#  #||#  spc   #||#  #||#  ralt  menu  rctl  #||#  #||#  #||#  left  down  right
 )
 
 (defvar
@@ -48,7 +88,11 @@ lctl  lmet  lalt  #||#  #||#  spc   #||#  #||#  ralt  menu  rctl  #||#  #||#  #|
   l (tap-hold $tt $ht l ralt)
   ; (tap-hold $tt $ht ; rmet)
 
-  ;; spc (tap-hold $tt $ht spc @lt7)
+  l_na (layer-toggle nav)
+  l_mo (layer-toggle mouse)
+  l_nu (layer-toggle num)
+  l_sy (layer-toggle symbol)
+
   home (tap-hold $tt $ht home lrld)
 
   mmu (movemouse-accel-up    $mouse-interval $mouse-accel-interval $mouse-min-distance $mouse-max-distance)

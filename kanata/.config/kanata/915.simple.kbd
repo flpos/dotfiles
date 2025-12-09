@@ -1,0 +1,37 @@
+;; 915TKL
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12       prnt slck brk
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc ins  home pgup
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \    del  end  pgdn
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft                up
+  lctl lmet lalt           spc            ralt menu rctl                left down right
+)
+
+(deflayer base
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12       prnt slck brk
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc ins  home pgup
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \    del  end  pgdn
+  lctl @a   @s   @d   @f   g    h    @j   @k   @l   @;   '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft                up
+  lctl lmet lalt           spc            ralt menu rctl                left down right
+)
+
+(defvar
+  tap-time 200
+  hold-time 180
+  tt $tap-time
+  ht $hold-time
+)
+
+(defalias
+  a (tap-hold $tt $ht a lmet)
+  s (tap-hold $tt $ht s lalt)
+  d (tap-hold $tt $ht d lctl)
+  f (tap-hold $tt $ht f lsft)
+
+  j (tap-hold $tt $ht j rsft)
+  k (tap-hold $tt $ht k rctl)
+  l (tap-hold $tt $ht l ralt)
+  ; (tap-hold $tt $ht ; rmet)
+)
