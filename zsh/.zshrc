@@ -183,7 +183,7 @@ fi
 alias notes="nvim +\"cd ~/notes\""
 
 # Nvim clean
-alias nclean="NVIM_APPNAME=nvim-clean nvim"
+alias n="NVIM_APPNAME=nvim-clean nvim"
 
 alias snxc="snxctl connect"
 alias snxd="snxctl disconnect"
