@@ -16,7 +16,12 @@ vim.o.tabstop = 2
 vim.o.shiftwidth = 2
 vim.o.expandtab = true
 vim.o.wrap = false
-vim.o.completeopt = 'fuzzy,menu,menuone,popup'
+vim.o.cmdheight = 0
+
+-- Pessoal
+-- vim.o.completeopt = 'fuzzy,menu,menuone,popup'
+-- MiniCompletion
+vim.o.completeopt = 'menuone,noselect,fuzzy'
 
 -- Sync clipboard between OS and Neovim. Schedule the setting after `UiEnter` because it can
 -- increase startup-time. Remove this option if you want your OS clipboard to remain independent.
@@ -65,7 +70,7 @@ vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true })
 vim.keymap.set({'n'}, '<leader>d', vim.cmd.bdelete, { noremap = true })
 vim.keymap.set({'n'}, 'L', vim.cmd.bnext, { noremap = true })
 vim.keymap.set({'n'}, 'H', vim.cmd.bprevious, { noremap = true })
-vim.keymap.set({'n'}, '<leader>e', vim.cmd.Ex, { noremap = true })
+-- vim.keymap.set({'n'}, '<leader>e', vim.cmd.Ex, { noremap = true })
 
 -- [[ Basic Autocommands ]].
 -- See `:h lua-guide-autocommands`, `:h autocmd`, `:h nvim_create_autocmd()`
