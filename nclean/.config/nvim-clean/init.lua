@@ -100,7 +100,6 @@ end, { desc = 'Print the git blame for the current line' })
 -- TODO: adicionar integração com o git
 -- TODO: adicionar fuzzyfinder (arquivos e textos)
 -- TODO: configurar lsp do lua para a config do neovim.
-require("config.lazy")
 
 vim.lsp.config["ts_ls"] = {
   --cmd = { "npx", "typescript-language-server", "--stdio" },
@@ -130,3 +129,4 @@ vim.lsp.config["lua_ls"] = {
   }
 }
 vim.lsp.enable("lua_ls")
+-- require("config.lazy")
