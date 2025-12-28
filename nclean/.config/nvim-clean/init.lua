@@ -98,7 +98,6 @@ end, { desc = 'Print the git blame for the current line' })
 -- vim.pack.add({ 'https://github.com/neovim/nvim-lspconfig' })
 
 -- TODO: adicionar integração com o git
--- TODO: adicionar fuzzyfinder (arquivos e textos)
-
 -- require("config.lazy")
+require("plugins")
 require("lsp")
