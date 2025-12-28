@@ -1,12 +1,12 @@
 -- Centralizador de configurações de LSP
 
-vim.lsp.config["vtsls"] = {
-  --cmd = { "npx", "typescript-language-server", "--stdio" },
-  cmd = { "npx", "vtsls", "--stdio" },
-  filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
-  root_markers = { "tsconfig.json", "package.json" },
-}
-vim.lsp.enable("vtsls")
+-- vim.lsp.config["vtsls"] = {
+--   --cmd = { "npx", "typescript-language-server", "--stdio" },
+--   cmd = { "npx", "vtsls", "--stdio" },
+--   filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+--   root_markers = { "tsconfig.json", "package.json" },
+-- }
+-- vim.lsp.enable("vtsls")
 
 vim.lsp.config["lua_ls"] = {
   cmd = { "lua-language-server" },
