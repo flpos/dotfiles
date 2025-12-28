@@ -2,6 +2,7 @@
 -- See `:help mapleader`
 -- NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
+vim.g.maplocalleader = '\\'
 
 -- [[ Setting options ]] See `:h vim.o`
 -- NOTE: You can change these options as you wish!
@@ -15,6 +16,7 @@ vim.o.tabstop = 2
 vim.o.shiftwidth = 2
 vim.o.expandtab = true
 vim.o.wrap = false
+vim.o.completeopt = 'fuzzy,menu,menuone,popup'
 
 -- Sync clipboard between OS and Neovim. Schedule the setting after `UiEnter` because it can
 -- increase startup-time. Remove this option if you want your OS clipboard to remain independent.
@@ -58,7 +60,12 @@ vim.keymap.set({ 'n' }, '<C-k>', '<C-w>k')
 vim.keymap.set({ 'n' }, '<C-l>', '<C-w>l')
 
 vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true })
-vim.keymap.set('i', '<C-s>', '<Esc>:w<CR>', { noremap = true })
+-- vim.keymap.set('i', '<C-s>', '<Esc>:w<CR>', { noremap = true })
+
+vim.keymap.set({'n'}, '<leader>d', vim.cmd.bdelete, { noremap = true })
+vim.keymap.set({'n'}, 'L', vim.cmd.bnext, { noremap = true })
+vim.keymap.set({'n'}, 'H', vim.cmd.bprevious, { noremap = true })
+vim.keymap.set({'n'}, '<leader>e', vim.cmd.Ex, { noremap = true })
 
 -- [[ Basic Autocommands ]].
 -- See `:h lua-guide-autocommands`, `:h autocmd`, `:h nvim_create_autocmd()`
