@@ -99,34 +99,6 @@ end, { desc = 'Print the git blame for the current line' })
 
 -- TODO: adicionar integração com o git
 -- TODO: adicionar fuzzyfinder (arquivos e textos)
--- TODO: configurar lsp do lua para a config do neovim.
 
-vim.lsp.config["ts_ls"] = {
-  --cmd = { "npx", "typescript-language-server", "--stdio" },
-  cmd = { "npx", "vtsls", "--stdio" },
-  filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
-  root_markers = { "tsconfig.json", "package.json" },
-}
-vim.lsp.enable("ts_ls")
-
-vim.lsp.config["lua_ls"] = {
-  cmd = { "lua-language-server" },
-  filetypes = { "lua" },
-  -- Sets the "workspace" to the directory where any of these files is found.
-  root_markers = {
-    ".luarc.json",
-    ".luarc.jsonc",
-    ".luacheckrc",
-    ".stylua.toml",
-    ".git",
-  },
-  settings = {
-    Lua = {
-      runtime = {
-        version = 'LuaJIT',
-      }
-    }
-  }
-}
-vim.lsp.enable("lua_ls")
 -- require("config.lazy")
+require("lsp")
