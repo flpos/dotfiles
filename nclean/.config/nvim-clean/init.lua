@@ -55,21 +55,21 @@ vim.o.confirm = true
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
 -- Map <A-j>, <A-k>, <A-h>, <A-l> to navigate between windows in any modes
-vim.keymap.set({ 't', 'i' }, '<C-h>', '<C-\\><C-n><C-w>h')
-vim.keymap.set({ 't', 'i' }, '<C-j>', '<C-\\><C-n><C-w>j')
-vim.keymap.set({ 't', 'i' }, '<C-k>', '<C-\\><C-n><C-w>k')
-vim.keymap.set({ 't', 'i' }, '<C-l>', '<C-\\><C-n><C-w>l')
-vim.keymap.set({ 'n' }, '<C-h>', '<C-w>h')
-vim.keymap.set({ 'n' }, '<C-j>', '<C-w>j')
-vim.keymap.set({ 'n' }, '<C-k>', '<C-w>k')
-vim.keymap.set({ 'n' }, '<C-l>', '<C-w>l')
+-- vim.keymap.set({ 't', 'i' }, '<C-h>', '<C-\\><C-n><C-w>h')
+-- vim.keymap.set({ 't', 'i' }, '<C-j>', '<C-\\><C-n><C-w>j')
+-- vim.keymap.set({ 't', 'i' }, '<C-k>', '<C-\\><C-n><C-w>k')
+-- vim.keymap.set({ 't', 'i' }, '<C-l>', '<C-\\><C-n><C-w>l')
+-- vim.keymap.set({ 'n' }, '<C-h>', '<C-w>h')
+-- vim.keymap.set({ 'n' }, '<C-j>', '<C-w>j')
+-- vim.keymap.set({ 'n' }, '<C-k>', '<C-w>k')
+-- vim.keymap.set({ 'n' }, '<C-l>', '<C-w>l')
 
 vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true })
 -- vim.keymap.set('i', '<C-s>', '<Esc>:w<CR>', { noremap = true })
 
 vim.keymap.set({'n'}, '<leader>d', vim.cmd.bdelete, { noremap = true })
-vim.keymap.set({'n'}, 'L', vim.cmd.bnext, { noremap = true })
-vim.keymap.set({'n'}, 'H', vim.cmd.bprevious, { noremap = true })
+-- vim.keymap.set({'n'}, 'L', vim.cmd.bnext, { noremap = true })
+-- vim.keymap.set({'n'}, 'H', vim.cmd.bprevious, { noremap = true })
 -- vim.keymap.set({'n'}, '<leader>e', vim.cmd.Ex, { noremap = true })
 
 -- [[ Basic Autocommands ]].
