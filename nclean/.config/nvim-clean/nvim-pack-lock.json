@@ -4,6 +4,10 @@
       "rev": "84789bfe57d7cd9caa7965f488750c96beb606d9",
       "src": "https://github.com/sharkdp/fd"
     },
+    "flexoki-neovim": {
+      "rev": "c3e2251e813d29d885a7cbbe9808a7af234d845d",
+      "src": "https://github.com/kepano/flexoki-neovim"
+    },
     "friendly-snippets": {
       "rev": "572f5660cf05f8cd8834e096d7b4c921ba18e175",
       "src": "https://github.com/rafamadriz/friendly-snippets"

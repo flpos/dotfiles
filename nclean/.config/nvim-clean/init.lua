@@ -113,3 +113,4 @@ end, { desc = 'Print the git blame for the current line' })
 -- require("config.lazy")
 require("plugins")
 require("lsp")
+vim.o.background = 'light'
