@@ -32,6 +32,25 @@ vim.api.nvim_create_autocmd('UIEnter', {
   end,
 })
 
+local ajusta_background = function()
+	local handle = io.popen("gsettings get org.gnome.desktop.interface color-scheme")
+  if handle == nil then
+    return
+  end
+
+	local result = handle:read("*a"):gsub("['\n]", "")
+	handle:close()
+
+	vim.o.background = (result == "prefer-dark") and "dark" or "light"
+end
+
+-- autocmd para atualizar sempre que foco
+-- vim.api.nvim_create_autocmd({"FocusGained", "VimEnter"}, {
+vim.api.nvim_create_autocmd("UIEnter", {
+	callback = ajusta_background,
+})
+vim.api.nvim_create_user_command('AtualizaBackground', ajusta_background, {})
+
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.o.ignorecase = true
 vim.o.smartcase = true
@@ -113,4 +132,3 @@ end, { desc = 'Print the git blame for the current line' })
 -- require("config.lazy")
 require("plugins")
 require("lsp")
-vim.o.background = 'light'
