@@ -32,6 +32,17 @@ vim.keymap.set({ 'n' }, '<leader>E', function()
   MiniFiles.open()
 end)
 
+require('mini.pick').setup()
+
+vim.keymap.set('n', '<leader><leader>', ':Pick files<CR>', { desc = 'Mini Picker find files' })
+vim.keymap.set('n', '<leader>fc', function() MiniPick.builtin.files(nil, { source = { cwd = vim.fn.stdpath('config') } }) end,
+  { desc = 'Mini Picker find files' })
+-- vim.keymap.set('n', '<leader>fh', function() builtin.find_files({ hidden = true }) end,
+--   { desc = 'Mini Picker find files' })
+vim.keymap.set('n', '<leader>/', ':Pick grep_live<CR>', { desc = 'Mini Picker live grep' })
+vim.keymap.set('n', '<leader>b', ':Pick buffers<CR>', { desc = 'Mini Picker buffers' })
+vim.keymap.set('n', '<leader>sh', ':Pick help<CR>', { desc = 'Mini Picker help tags' })
+
 require('mini.notify').setup()
 require('mini.surround').setup()
 require('mini.pairs').setup()
