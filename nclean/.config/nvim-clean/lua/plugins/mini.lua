@@ -57,3 +57,10 @@ require('mini.indentscope').setup({
     animation = require('mini.indentscope').gen_animation.none()
   },
 })
+require('mini.basics').setup({
+  options = {
+    basic = true,
+    extra_ui = true,
+    win_borders = 'single'
+  }
+})
