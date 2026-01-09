@@ -50,7 +50,11 @@ require('mini.move').setup()
 require('mini.ai').setup()
 require('mini.diff').setup()
 require('mini.jump').setup()
-require('mini.hipatterns').setup()
+require('mini.hipatterns').setup({
+     highlighters = {
+       hex_color = require('mini.hipatterns').gen_highlighter.hex_color(),
+     }
+   })
 require('mini.indentscope').setup({
   draw = {
     delay = 0,
