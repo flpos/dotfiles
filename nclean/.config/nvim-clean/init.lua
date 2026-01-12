@@ -27,12 +27,7 @@ vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
 vim.keymap.set({ 'n' }, '<leader>d', vim.cmd.bdelete, { noremap = true })
 
-vim.keymap.set({ 'n' }, '<M-{>', function()
-  vim.cmd.set('foldlevel-=1')
-end, { noremap = true })
-vim.keymap.set({ 'n' }, '<M-}>', function()
-  vim.cmd.set('foldlevel+=1')
-end, { noremap = true })
+vim.o.foldtext = ''
 
 require("plugins")
 require("lsp")
