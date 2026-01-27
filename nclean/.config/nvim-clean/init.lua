@@ -9,6 +9,7 @@ vim.o.tabstop = 2
 vim.o.shiftwidth = 2
 vim.o.expandtab = true
 vim.o.completeopt = 'menuone,noselect,fuzzy'
+vim.o.foldtext = ''
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.o.scrolloff = 3
@@ -31,3 +32,5 @@ vim.o.foldtext = ''
 
 require("plugins")
 require("lsp")
+
+vim.cmd.colorscheme("phoenix")

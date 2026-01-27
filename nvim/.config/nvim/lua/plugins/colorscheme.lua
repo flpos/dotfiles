@@ -5,7 +5,7 @@ return {
     name = "catppuccin",
     opts = {
       flavour = "macchiato",
-      transparent_background = true,
+      transparent_background = false,
       lsp_styles = {
         underlines = {
           errors = { "undercurl" },
@@ -56,7 +56,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "alabaster",
     },
   },
 }
