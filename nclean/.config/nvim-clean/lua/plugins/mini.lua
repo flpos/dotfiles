@@ -6,6 +6,7 @@ require('mini.completion').setup({
     force_twostep = '<C-n>'
   }
 })
+
 local gen_loader = require('mini.snippets').gen_loader
 require('mini.snippets').setup({
   snippets = {
@@ -17,20 +18,9 @@ require('mini.snippets').setup({
     gen_loader.from_lang(),
   },
 })
+
 require('mini.icons').setup()
 MiniIcons.tweak_lsp_kind()
-
-require('mini.files').setup({
-  mappings = {
-    close = '<leader>e'
-  }
-})
-vim.keymap.set({ 'n' }, '<leader>e', function()
-  MiniFiles.open(vim.api.nvim_buf_get_name(0))
-end)
-vim.keymap.set({ 'n' }, '<leader>E', function()
-  MiniFiles.open()
-end)
 
 require('mini.pick').setup()
 
@@ -49,22 +39,18 @@ require('mini.pairs').setup()
 require('mini.move').setup()
 require('mini.ai').setup()
 require('mini.diff').setup()
-require('mini.jump').setup()
+
 require('mini.hipatterns').setup({
      highlighters = {
        hex_color = require('mini.hipatterns').gen_highlighter.hex_color(),
      }
    })
-require('mini.indentscope').setup({
-  draw = {
-    delay = 0,
-    animation = require('mini.indentscope').gen_animation.none()
-  },
-})
+
 require('mini.basics').setup({
   options = {
-    basic = true,
-    extra_ui = false,
-    win_borders = 'single'
+    basic = false,
+  },
+  mappings = {
+    basic = false,
   }
 })

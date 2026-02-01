@@ -4,12 +4,14 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
 
+vim.o.number = true
 vim.o.relativenumber = true
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
 vim.o.expandtab = true
 vim.o.completeopt = 'menuone,noselect,fuzzy'
 vim.o.foldtext = ''
+vim.o.splitbelow = false -- Horizontal splits will be below
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.o.scrolloff = 3
@@ -26,11 +28,14 @@ vim.o.confirm = true
 -- Use <Esc> to exit terminal mode
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
-vim.keymap.set({ 'n' }, '<leader>d', vim.cmd.bdelete, { noremap = true })
+-- Open Explorer on leade e
+vim.keymap.set('n', '<leader>e', vim.cmd.Ex, { desc = "Open Explorer" })
+
+vim.keymap.set({ 'n' }, '<leader>x', vim.cmd.bdelete, { noremap = true })
 
 vim.o.foldtext = ''
 
 require("plugins")
 require("lsp")
 
-vim.cmd.colorscheme("phoenix")
+vim.cmd.colorscheme("meh")
