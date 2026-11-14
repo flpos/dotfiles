@@ -1,12 +1,17 @@
 vim.pack.add({ 'https://github.com/nvim-mini/mini.nvim' })
 
 require('mini.completion').setup({
-  delay = { completion = 10^10},
+  delay = { completion = 10 ^ 10 },
+  lsp_completion = {
+    auto_setup = true
+  },
   mappings = {
     force_twostep = '<C-n>'
   }
 })
-
+require("mini.cmdline").setup({
+    autocorrect = { enable = false }
+})
 local gen_loader = require('mini.snippets').gen_loader
 require('mini.snippets').setup({
   snippets = {
@@ -25,15 +30,21 @@ MiniIcons.tweak_lsp_kind()
 require('mini.pick').setup()
 
 vim.keymap.set('n', '<leader><leader>', ':Pick files<CR>', { desc = 'Mini Picker find files' })
-vim.keymap.set('n', '<leader>fc', function() MiniPick.builtin.files(nil, { source = { cwd = vim.fn.stdpath('config') } }) end,
+vim.keymap.set('n', '<leader>fc',
+  function() MiniPick.builtin.files(nil, { source = { cwd = vim.fn.stdpath('config') } }) end,
   { desc = 'Mini Picker find files' })
--- vim.keymap.set('n', '<leader>fh', function() builtin.find_files({ hidden = true }) end,
---   { desc = 'Mini Picker find files' })
 vim.keymap.set('n', '<leader>/', ':Pick grep_live<CR>', { desc = 'Mini Picker live grep' })
-vim.keymap.set('n', '<leader>b', ':Pick buffers<CR>', { desc = 'Mini Picker buffers' })
+vim.keymap.set('n', '<leader>,', ':Pick buffers<CR>', { desc = 'Mini Picker buffers' })
 vim.keymap.set('n', '<leader>sh', ':Pick help<CR>', { desc = 'Mini Picker help tags' })
 
-require('mini.notify').setup()
+-- require("mini.notify").setup({
+--   -- only show messages
+--   content = {
+--     format = function(notif)
+--       return notif.msg
+--     end,
+--   },
+-- })
 require('mini.surround').setup()
 require('mini.pairs').setup()
 require('mini.move').setup()
@@ -41,16 +52,13 @@ require('mini.ai').setup()
 require('mini.diff').setup()
 
 require('mini.hipatterns').setup({
-     highlighters = {
-       hex_color = require('mini.hipatterns').gen_highlighter.hex_color(),
-     }
-   })
-
-require('mini.basics').setup({
-  options = {
-    basic = false,
-  },
-  mappings = {
-    basic = false,
+  highlighters = {
+    hex_color = require('mini.hipatterns').gen_highlighter.hex_color(),
   }
 })
+
+-- require('mini.basics').setup({
+--   mappings = {
+--     basic = false,
+--   }
+-- })

@@ -1,4 +1,5 @@
--- Set <space> as the leader key
+require("vim._core.ui2").enable({})
+
 -- See `:help mapleader`
 -- NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
@@ -8,16 +9,28 @@ vim.o.number = true
 vim.o.relativenumber = true
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
+vim.o.softtabstop = 2
 vim.o.expandtab = true
-vim.o.completeopt = 'menuone,noselect,fuzzy'
+vim.o.completeopt = 'menuone,noselect,fuzzy,nosort'
 vim.o.foldtext = ''
 vim.o.splitbelow = false -- Horizontal splits will be below
 
--- Minimal number of screen lines to keep above and below the cursor.
-vim.o.scrolloff = 3
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undodir = vim.fn.stdpath("data") .. "/undodir"
+vim.opt.undofile = true
+
+vim.opt.cmdheight = 0
+vim.opt.shortmess:append("c")
+vim.opt.clipboard:append("unnamedplus")
+vim.opt.isfname:append("@-@")
+vim.opt.signcolumn = "yes"
 
 -- Show <tab> and trailing spaces
-vim.o.list = true
+vim.o.list = false
 
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s) See `:help 'confirm'`
@@ -33,9 +46,7 @@ vim.keymap.set('n', '<leader>e', vim.cmd.Ex, { desc = "Open Explorer" })
 
 vim.keymap.set({ 'n' }, '<leader>x', vim.cmd.bdelete, { noremap = true })
 
-vim.o.foldtext = ''
-
 require("plugins")
 require("lsp")
 
-vim.cmd.colorscheme("meh")
+vim.cmd.colorscheme("default-felipe")
