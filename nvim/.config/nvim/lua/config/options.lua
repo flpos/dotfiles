@@ -3,6 +3,7 @@
 -- Add any additional options here
 vim.g.snacks_animate = false
 vim.g.lazyvim_cmp = "blink.cmp"
+vim.o.backupcopy = "yes"
 
 local opt = vim.opt
 opt.spelllang = { "pt_br", "en_us" }
